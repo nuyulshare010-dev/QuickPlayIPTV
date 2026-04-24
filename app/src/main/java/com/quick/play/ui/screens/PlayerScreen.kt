@@ -6,7 +6,6 @@ import android.net.Uri
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import android.widget.TextView
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -17,6 +16,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import android.os.Build
+import android.view.WindowManager
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
@@ -30,7 +31,6 @@ import androidx.media3.exoplayer.ExoPlayer
 import androidx.media3.exoplayer.source.DefaultMediaSourceFactory
 import androidx.media3.exoplayer.trackselection.DefaultTrackSelector
 import androidx.media3.ui.PlayerView
-import com.quick.play.R
 import com.quick.play.data.Channel
 
 @androidx.annotation.OptIn(UnstableApi::class)
@@ -104,6 +104,13 @@ fun PlayerScreen(
         val originalOrientation = activity?.requestedOrientation ?: ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED
         
         activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+        
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            window?.attributes = window?.attributes?.apply {
+                layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES
+            }
+        }
+        
         insetsController?.hide(WindowInsetsCompat.Type.systemBars())
         insetsController?.systemBarsBehavior = WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         
@@ -121,57 +128,14 @@ fun PlayerScreen(
     ) {
         AndroidView(
             factory = { ctx ->
-                val layout = LayoutInflater.from(ctx).inflate(R.layout.custom_player_layout, null) as FrameLayout
-                val playerView = layout.findViewById<PlayerView>(R.id.player_view)
-                val hqButton = layout.findViewById<android.widget.ImageButton>(R.id.hq_button)
-                val audioButton = layout.findViewById<android.widget.ImageButton>(R.id.audio_button)
-                
-                playerView.player = exoPlayer
-                
-                hqButton.setOnClickListener {
-                    val mappedTrackInfo = trackSelector.currentMappedTrackInfo
-                    if (mappedTrackInfo != null) {
-                        androidx.media3.ui.TrackSelectionDialogBuilder(
-                            ctx,
-                            "Select Video Quality",
-                            exoPlayer,
-                            C.TRACK_TYPE_VIDEO
-                        ).setTheme(android.R.style.Theme_DeviceDefault_Dialog).build().show()
-                    }
+                PlayerView(ctx).apply {
+                    player = exoPlayer
+                    layoutParams = FrameLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
+                    )
+                    useController = true
                 }
-
-                audioButton.setOnClickListener {
-                    val mappedTrackInfo = trackSelector.currentMappedTrackInfo
-                    if (mappedTrackInfo != null) {
-                        var hasAudioTracks = false
-                        for (i in 0 until mappedTrackInfo.rendererCount) {
-                            if (mappedTrackInfo.getRendererType(i) == C.TRACK_TYPE_AUDIO) {
-                                val trackGroups = mappedTrackInfo.getTrackGroups(i)
-                                if (trackGroups.length > 0) {
-                                    hasAudioTracks = true
-                                    break
-                                }
-                            }
-                        }
-                        
-                        if (hasAudioTracks) {
-                            val trackSelectionDialogBuilder = androidx.media3.ui.TrackSelectionDialogBuilder(
-                                ctx, "Select Audio Track", exoPlayer, C.TRACK_TYPE_AUDIO
-                            )
-                            trackSelectionDialogBuilder.setTheme(android.R.style.Theme_DeviceDefault_Dialog)
-                            trackSelectionDialogBuilder.setShowDisableOption(false)
-                            trackSelectionDialogBuilder.build().show()
-                        } else {
-                            android.widget.Toast.makeText(ctx, "No alternative audio tracks found", android.widget.Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }
-                
-                layout.layoutParams = FrameLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT
-                )
-                layout
             },
             modifier = Modifier.fillMaxSize()
         )

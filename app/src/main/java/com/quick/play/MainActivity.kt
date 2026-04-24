@@ -1,5 +1,6 @@
 package com.quick.play
 
+import androidx.compose.foundation.layout.WindowInsets
 import android.os.Build
 import android.os.Bundle
 import android.util.Base64
@@ -76,6 +77,7 @@ fun MainApp() {
     val showBottomBar = currentRoute == "playlists" || currentRoute == "settings"
 
     Scaffold(
+        contentWindowInsets = WindowInsets(0, 0, 0, 0),
         modifier = Modifier.fillMaxSize(),
         bottomBar = {
             if (showBottomBar) {
@@ -109,7 +111,8 @@ fun MainApp() {
         }
     ) { innerPadding ->
         // We only apply inner padding to non-player screens so they don't overlap with bottom nav
-        val paddingModifier = if (currentRoute?.startsWith("player") == true) Modifier else Modifier.padding(innerPadding)
+        val isPlayer = currentRoute?.startsWith("player") == true
+        val paddingModifier = if (isPlayer) Modifier else Modifier.padding(innerPadding)
         
         NavHost(
             navController = navController, 

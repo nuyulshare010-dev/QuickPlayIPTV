@@ -1,15 +1,19 @@
 [
     {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_player_layout.xml.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_player_layout.xml"
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_forward_10.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_forward_10.xml"
     },
     {
         "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_fire.xml.flat",
         "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_fire.xml"
     },
     {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_player_view.xml.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_player_view.xml"
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_play_arrow_black.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_play_arrow_black.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_rewind_10.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_rewind_10.xml"
     },
     {
         "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_cc.xml.flat",
@@ -24,20 +28,84 @@
         "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/rounded_bg.xml"
     },
     {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_custom_quality.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_custom_quality.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_subtitle.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_subtitle.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_fullscreen.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_fullscreen.xml"
+    },
+    {
         "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_play.xml.flat",
         "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_play.xml"
     },
     {
-        "merged": "com.quick.play.app-debug-4:/layout_custom_player_layout.xml.flat",
-        "source": "com.quick.play.app-main-6:/layout/custom_player_layout.xml"
-    },
-    {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_exo_icon_settings.xml.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/exo_icon_settings.xml"
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_vr.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_vr.xml"
     },
     {
         "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_playback_view.xml.flat",
         "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_playback_view.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_rounded_bg_semi.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/rounded_bg_semi.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_exo_playback_control_view.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_exo_playback_control_view.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_forward_15.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_forward_15.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_controls.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_controls.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_settings.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_settings.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_rewind_5.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_rewind_5.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_custom_audio.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_custom_audio.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_player_layout.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_player_layout.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_play_circle.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_play_circle.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_player_view.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_player_view.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_settings_gear.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_settings_gear.xml"
+    },
+    {
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_exo_icon_settings.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/exo_icon_settings.xml"
     },
     {
         "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_playback_control_view.xml.flat",
@@ -48,44 +116,28 @@
         "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/mipmap-mdpi/ic_launcher.png"
     },
     {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_exo_playback_control_view.xml.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_exo_playback_control_view.xml"
-    },
-    {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_rounded_bg_semi.xml.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/rounded_bg_semi.xml"
-    },
-    {
-        "merged": "com.quick.play.app-debug-4:/drawable_ic_custom_audio.xml.flat",
-        "source": "com.quick.play.app-main-6:/drawable/ic_custom_audio.xml"
-    },
-    {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_white_circle_bg.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/white_circle_bg.xml"
     },
     {
         "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_hq_bg.xml.flat",
         "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/hq_bg.xml"
     },
     {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "com.quick.play.app-debug-4:/layout_custom_playback_view.xml.flat",
+        "source": "com.quick.play.app-main-6:/layout/custom_playback_view.xml"
     },
     {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/mipmap-xhdpi/ic_launcher.png"
     },
     {
         "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_exo_player_control_view.xml.flat",
         "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/layout/custom_exo_player_control_view.xml"
     },
     {
-        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_custom_audio.xml.flat",
-        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_custom_audio.xml"
-    },
-    {
-        "merged": "com.quick.play.app-debug-4:/drawable_ic_custom_quality.xml.flat",
-        "source": "com.quick.play.app-main-6:/drawable/ic_custom_quality.xml"
+        "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/drawable_ic_back.xml.flat",
+        "source": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-main-6:/drawable/ic_back.xml"
     },
     {
         "merged": "/opt/gradle-home/daemon/8.11.1/com.quick.play.app-debug-4:/layout_custom_playback_control.xml.flat",

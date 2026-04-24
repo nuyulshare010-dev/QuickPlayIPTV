@@ -29,10 +29,13 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.unit.dp
+import android.os.Build
+import android.view.WindowManager
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.media3.ui.TrackSelectionDialogBuilder
 import androidx.media3.common.C
 import androidx.media3.common.MediaItem
 import androidx.media3.common.TrackSelectionParameters
@@ -47,6 +50,7 @@ import android.view.LayoutInflater
 import android.widget.TextView
 import com.quick.play.R
 import androidx.media3.ui.PlayerView
+
 
 class ExternalPlayerActivity : ComponentActivity() {
 
@@ -149,52 +153,18 @@ fun ExternalPlayerScreen(uri: Uri) {
     ) {
         AndroidView(
             factory = { ctx ->
-                val layout = android.view.LayoutInflater.from(ctx).inflate(com.quick.play.R.layout.custom_player_layout, null) as FrameLayout
-                val playerView = layout.findViewById<PlayerView>(com.quick.play.R.id.player_view)
-                val hqButton = layout.findViewById<android.widget.ImageButton>(com.quick.play.R.id.hq_button)
-                val audioButton = layout.findViewById<android.widget.ImageButton>(com.quick.play.R.id.audio_button)
-                
-                playerView.player = exoPlayer
-                
-                hqButton.setOnClickListener {
-                    val trackSelectionDialogBuilder = androidx.media3.ui.TrackSelectionDialogBuilder(
-                        ctx, "Select Video Quality", exoPlayer, C.TRACK_TYPE_VIDEO
+                PlayerView(ctx).apply {
+                    player = exoPlayer
+                    layoutParams = FrameLayout.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT
                     )
-                    trackSelectionDialogBuilder.setTheme(android.R.style.Theme_DeviceDefault_Dialog)
-                    trackSelectionDialogBuilder.build().show()
+                    useController = true
+                    
+                    // Force ExoPlayer to show the built-in settings icon (gear icon)
+                    // This creates the overlay for Quality/Subtitle/Audio track selection automatically
+                    setShowSubtitleButton(true)
                 }
-                
-                audioButton.setOnClickListener {
-                    val mappedTrackInfo = trackSelector.currentMappedTrackInfo
-                    if (mappedTrackInfo != null) {
-                        var hasTextTracks = false
-                        for (i in 0 until mappedTrackInfo.rendererCount) {
-                            if (mappedTrackInfo.getRendererType(i) == C.TRACK_TYPE_TEXT) {
-                                val trackGroups = mappedTrackInfo.getTrackGroups(i)
-                                if (trackGroups.length > 0) {
-                                    hasTextTracks = true
-                                    break
-                                }
-                            }
-                        }
-                        
-                        if (hasTextTracks) {
-                            val trackSelectionDialogBuilder = androidx.media3.ui.TrackSelectionDialogBuilder(
-                                ctx, "Select Subtitle", exoPlayer, C.TRACK_TYPE_TEXT
-                            )
-                            trackSelectionDialogBuilder.setTheme(android.R.style.Theme_DeviceDefault_Dialog)
-                            trackSelectionDialogBuilder.build().show()
-                        } else {
-                            android.widget.Toast.makeText(ctx, "No alternative audio tracks found", android.widget.Toast.LENGTH_SHORT).show()
-                        }
-                    }
-                }
-                
-                layout.layoutParams = FrameLayout.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT
-                )
-                layout
             },
             modifier = Modifier.fillMaxSize()
         )
